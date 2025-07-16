@@ -1,0 +1,188 @@
+/* Modern Portfolio Styles */
+
+nav {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: 16px;
+  margin: 32px auto 40px auto;
+  max-width: 900px;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 6px 16px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+nav a:hover {
+  background: var(--primary);
+  color: var(--secondary);
+  box-shadow: 0 2px 8px var(--primary);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  animation: fadeInUp 1s cubic-bezier(.25,.8,.25,1);
+}
+.hero-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--secondary);
+  box-shadow: var(--card-shadow);
+}
+.cta-btn {
+  background: var(--accent);
+  color: var(--secondary);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--accent);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.cta-btn:hover {
+  background: var(--primary);
+  box-shadow: 0 4px 16px var(--primary);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 24px 20px 20px 20px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+  animation: fadeInUp 0.8s cubic-bezier(.25,.8,.25,1);
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px var(--primary);
+}
+.card img, .card .card-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background: #eee;
+  margin-bottom: 16px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 1.5rem;
+}
+
+form {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #23243a;
+  color: var(--text);
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid var(--primary);
+  outline: none;
+  box-shadow: 0 2px 8px var(--primary);
+}
+button[type="submit"] {
+  background: var(--primary);
+  color: var(--secondary);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+button[type="submit"]:hover {
+  background: var(--accent);
+  box-shadow: 0 4px 16px var(--accent);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  nav {
+    max-width: 98vw;
+    padding: 12px 8px;
+    gap: 18px;
+  }
+  .projects-grid {
+    gap: 18px;
+  }
+  .card {
+    width: 90vw;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 24px 0;
+  }
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 98vw;
+    min-width: 180px;
+    padding: 16px 8px;
+  }
+  form {
+    padding: 18px 6px;
+    max-width: 98vw;
+  }
+}
